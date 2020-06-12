@@ -127,12 +127,28 @@ class Lambdasian {
         + `favLanguage`: i.e. 'JavaScript, Python, Elm etc.'
         + `catchPhrase`: i.e. `Don't forget the homies`.
     - The constructor calls the parent constructor passing it what it needs.
-    - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
+    - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties 
+    on the instance.
     - Instructor instances have the following methods:
-        + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
-        + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
+        + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are 
+        learning about {subject}' where subject is the param passed in.
+        + `grade` receives a `student` object and a `subject` string as arguments and returns 
+        '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {}
+class Instructor extends Lambdasian {
+	constructor(attrs) {
+		super(attrs);
+		this.specialty = attrs.specialty;
+		this.favLanguage = attrs.favLanguage;
+		this.catchPhrase = attrs.catchPhrase;
+	}
+	demo(subject) {
+		return `Today we are learning about ${subject}`;
+	}
+	grade(student, subject) {
+		return `${student.name} receives a perfect score on ${subject}`;
+	}
+}
 
 /*
   TASK 5
